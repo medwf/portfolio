@@ -1,0 +1,108 @@
+{
+  "Navbar": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "HomePage": {
+    "location": "Casablanca, Morocco",
+    "greeting": "Hi, I'm",
+    "name": "Mohamed",
+    "role": "Full-Stack Developer & Devops Engineer",
+    "description": "Specializing in Full-Stack Development and DevOps. I build modern web applications and scalable infrastructure.",
+    "viewProjects": "View Projects",
+    "downloadCV": "Download Resume",
+    "openForPFE": "I'm available for hire",
+    "learnMore": "Learn more"
+  },
+
+  "about": {
+    "title": "About",
+    "me": "Me",
+    "role": "Full-Stack Developer & Devops Engineer",
+    "subtitle": "passionate about devops and web development to build scalable and efficient solutions.",
+    "whoIAm": "Who I Am",
+    "location": "Casablanca, Morocco",
+    "bio1": "I am Mohamed Wafi, a licence graduate in full-stack development, passionate about web development and cloud computing.",
+    "bio2": "I have a strong expertise in designing and developing web applications, managing cloud infrastructure, and implementing DevOps practices to streamline development workflows.",
+    "bio3": "Skilled in cloud deployment, full-stack development, and data engineering, I enjoy turning complex data and algorithms into scalable, high-impact solutions.",
+    "whatIDo": "What I Do",
+    "ml": "Machine Learning",
+    "mlDesc": "Supervised & unsupervised learning, CNN, LSTM, Transformers for real-world applications.",
+    "nlp": "NLP & LLMs",
+    "nlpDesc": "Text mining, BERT, mT5, TF-IDF, RAG for intelligent text processing and generation.",
+    "cv": "Computer Vision",
+    "cvDesc": "YOLOv8, Mask R-CNN, ResNet-50, OpenCV for detection, segmentation, and classification.",
+    "cloud": "Cloud & Deployment",
+    "cloudDesc": "Azure, AWS, Docker, Flask, FastAPI for scalable AI solutions deployment.",
+    "languages": "Languages",
+    "yearsLearning": "Years Learning",
+    "projectsCompleted": "Projects Completed",
+    "hackathonsWon": "Hackathons Won",
+    "techCommunities": "Tech Communities",
+    "availableForPFE": "Available for PFE Internship starting February 2026"
+  },
+
+  "skills": {
+    "title": "Skills &",
+    "techStack": "Tech Stack",
+    "subtitle": "A comprehensive toolkit for building intelligent systems from prototype to production",
+    "lgp": "Languages Programming",
+    "fe": "Frontend Development",
+    "be": "Backend Development",
+    "computerVision": "Computer Vision",
+    "dataBigData": "Data & Big Data",
+    "devops": "DevOps",
+    "softSkills": "Soft Skills",
+    "certifications": "Licenses & Certifications"
+  },
+  "Projects": {
+    "title": "Featured",
+    "featured": "Projects",
+    "subtitle": "Real-world AI solutions tackling cybersecurity, NLP, IoT, and computer vision challenges",
+    "other": "Freelance Projects",
+    "viewCode": "View Code",
+    "viewAll": "View all repositories on GitHub"
+  },
+  "Experience": {
+    "title": "Certifications &",
+    "education": "Education",
+    "subtitle": "A journey through learning, building, and learnning devops impactful solutions",
+    "work": "Certifications",
+    "edu": "Education",
+    "awards": "Awards & Distinctions",
+    "volunteering": "Volunteering & Leadership"
+  },
+  "contact": {
+    "title": "Let's",
+    "connect": "Connect",
+    "subtitle": "Have a project in mind, want to discuss opportunities, or just say hello? I'd love to hear from you.",
+    "getInTouch": "Get in Touch",
+    "followMe": "Follow Me",
+    "downloadResume": "Download Resume",
+    "englishCV": "English CV",
+    "frenchCV": "CV Français",
+    "lookingForPFE": "Looking for PFE Internship",
+    "pfeDescription": "I'm actively seeking a final-year internship (PFE) starting February 2026 to design and deploy intelligent, high-impact AI solutions.",
+    "openForOpportunities": "Open for opportunities",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "your@email.com",
+    "subjectPlaceholder": "What's this about?",
+    "messagePlaceholder": "Tell me about your project or opportunity...",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "messageSent": "Message sent!",
+    "messageDescription": "Thank you for reaching out. I'll get back to you soon."
+  },
+  "Footer": {
+    "builtWith": "Built with",
+    "by": "by",
+    "rights": "All rights reserved."
+  }
+}
