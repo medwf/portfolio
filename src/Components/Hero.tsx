@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { motion, type Variants } from "framer-motion";
 import profilePicture from "@/public/medwf.png";
 import Image from "next/image";
@@ -12,6 +12,7 @@ import {
 
 export default function Hero() {
     const t = useTranslations('HomePage');
+    const locale = useLocale();
 
     // Animation variants
     const containerVariants: Variants = {
@@ -82,7 +83,7 @@ export default function Hero() {
                                     {t("viewProjects")}
                                     <ArrowRight className="h-4 w-4" />
                                 </button>
-                                <a href="/MAIMOUNI_YOUSSEF_CV.pdf"
+                                <a href={`/MOHAMED_WAFI_${locale}.pdf`}
                                     download
                                     className="inline-flex items-center justify-center gap-2 h-12 px-8 text-base rounded-lg font-medium border border-muted-foreground/30 bg-transparent text-foreground hover:bg-muted hover:border-primary/50 hover:text-primary transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                                 >
