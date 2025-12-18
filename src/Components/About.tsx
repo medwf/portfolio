@@ -7,9 +7,11 @@ import {
     Calendar, Briefcase, Award, Users
 } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { use } from "react";
 
 export default function About() {
     const t = useTranslations("about");
+    const th = useTranslations("HomePage");
 
     const stats = [
         { label: t("yearsLearning"), value: "3+", icon: Calendar },
@@ -41,7 +43,7 @@ export default function About() {
                                         <Image src={profilePicture} alt="Mohamed Wafi" className="w-full h-full object-cover object-top" />
                                     </div>
                                     <h3 className="text-xl font-bold">Mohamed Wafi</h3>
-                                    <p className="text-primary text-sm">{t("role")}</p>
+                                    <p className="text-primary text-sm">{th("role")}</p>
                                 </div>
                                 <div className="space-y-4">
                                     <div className="flex items-center gap-3 text-sm">

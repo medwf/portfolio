@@ -7,6 +7,7 @@ import Image from "next/image";
 import {
     Github, Linkedin, Disc, Mail,
     Download, ArrowRight, MapPin,
+    Rss,
 } from "lucide-react";
 
 
@@ -38,10 +39,12 @@ export default function Hero() {
 
             <motion.div className="absolute top-20 right-4 md:right-20 w-3 md:w-4 h-3 md:h-4 rounded-full bg-primary/60 hidden sm:block"
                 animate={{ y: [0, -15, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} />
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            />
             <motion.div className="absolute bottom-40 left-4 md:left-20 w-2 md:w-3 h-2 md:h-3 rounded-full bg-secondary/60 hidden sm:block"
                 animate={{ y: [0, -20, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }} />
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            />
 
             <div className="container relative z-10 px-4 sm:px-6">
                 <motion.div variants={containerVariants} initial="hidden" animate="visible" className="max-w-5xl mx-auto">
@@ -59,7 +62,8 @@ export default function Hero() {
                         <div className="flex-1 text-center lg:text-left">
                             <motion.div variants={itemVariants} className="mb-4">
                                 <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-muted-foreground">
-                                    <MapPin /> {t("location")}
+                                    <MapPin />
+                                    {t("location")}
                                 </span>
                             </motion.div>
 
@@ -72,7 +76,9 @@ export default function Hero() {
                             </motion.p>
 
                             <motion.p variants={itemVariants} className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-xl mb-6 sm:mb-8 leading-relaxed">
-                                {t("description")}
+                                {t.rich("description", {
+                                    br: () => <br />
+                                })}
                             </motion.p>
 
                             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
@@ -101,9 +107,6 @@ export default function Hero() {
                                 </a>
                                 <a href="mailto:medwf.dev@outlook.com" className="p-3 rounded-xl glass glass-hover text-muted-foreground hover:text-primary">
                                     <Mail className="h-5 w-5" />
-                                </a>
-                                <a href="https://discord.com/users/medwf" target="_blank" rel="noopener noreferrer" className="p-3 rounded-xl glass glass-hover text-muted-foreground hover:text-primary">
-                                    <Disc className="h-5 w-5" />
                                 </a>
                             </motion.div>
                         </div>
