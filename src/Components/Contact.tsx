@@ -52,7 +52,9 @@ export default function Contact() {
               {t("connect")}
             </span>
           </h2>
-          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">{t("subtitle")}</p>
+          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
+            {t("subtitle")}
+          </p>
         </motion.div>
 
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
@@ -175,9 +177,11 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full inline-flex items-center justify-center gap-2 h-12 px-8 text-base rounded-lg font-medium bg-gradient-to-r from-primary to-secondary text-primary-foreground shadow-lg hover:shadow-xl hover:shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none"
+                className="w-full inline-flex items-center justify-center gap-2 h-12 px-8 text-base rounded-lg font-medium bg-linear-to-r from-primary to-secondary text-primary-foreground shadow-lg hover:shadow-xl hover:shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none"
               >
-                {isSubmitting ? t("sending") : (<>{t("send")}<Send className="ml-2 h-4 w-4" /></>)}
+                {isSubmitting ?
+                  t("sending") :
+                  (<>{t("send")}<Send className="ml-2 h-4 w-4" /></>)}
               </button>
             </form>
           </motion.div>

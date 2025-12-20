@@ -7,7 +7,6 @@ import {
     Calendar, Briefcase, Award, Users
 } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { use } from "react";
 
 export default function About() {
     const t = useTranslations("about");
@@ -36,11 +35,13 @@ export default function About() {
 
                 <div className="max-w-6xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                        <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="lg:col-span-1">
+                        <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }} transition={{ duration: 0.6 }} className="lg:col-span-1">
                             <div className="glass rounded-2xl p-6">
                                 <div className="text-center mb-6">
                                     <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-4 border-primary/30">
-                                        <Image src={profilePicture} alt="Mohamed Wafi" className="w-full h-full object-cover object-top" />
+                                        <Image src={profilePicture} alt="Mohamed Wafi"
+                                            className="w-full h-full object-cover object-top" />
                                     </div>
                                     <h3 className="text-xl font-bold">Mohamed Wafi</h3>
                                     <p className="text-primary text-sm">{th("role")}</p>
@@ -48,20 +49,41 @@ export default function About() {
                                 <div className="space-y-4">
                                     <div className="flex items-center gap-3 text-sm">
                                         <MapPin className="h-4 w-4 text-primary shrink-0" />
-                                        <span className="text-muted-foreground truncate">{t("location")}</span></div>
+                                        <span className="text-muted-foreground truncate">
+                                            {t("location")
+                                            }</span>
+                                    </div>
                                     <div className="flex items-center gap-3 text-sm">
-                                        <Phone className="h-4 w-4 text-primary shrink-0" /><span className="text-muted-foreground">+212 663 350 206</span></div>
+                                        <Phone className="h-4 w-4 text-primary shrink-0" />
+                                        <span className="text-muted-foreground">
+                                            +212 663 350 206
+                                        </span>
+                                    </div>
                                     <div className="flex items-center gap-3 text-sm">
-                                        <Mail className="h-4 w-4 text-primary shrink-0" /><span className="text-muted-foreground text-xs sm:text-sm truncate">medwf.dev@outlook.com</span></div>
+                                        <Mail className="h-4 w-4 text-primary shrink-0" />
+                                        <span className="text-muted-foreground text-xs sm:text-sm truncate">
+                                            medwf.dev@outlook.com
+                                        </span>
+                                    </div>
                                     <div className="flex items-center gap-3 text-sm">
-                                        <GraduationCap className="h-4 w-4 text-primary shrink-0" /><span className="text-muted-foreground text-xs sm:text-sm">Licence Developper Full Stack & DevOps</span></div>
+                                        <GraduationCap className="h-4 w-4 text-primary shrink-0" />
+                                        <span className="text-muted-foreground text-xs sm:text-sm">
+                                            Licence Developper Full Stack & DevOps
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>
 
-                        <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="lg:col-span-2 space-y-8">
+                        <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }} transition={{ duration: 0.6 }} className="lg:col-span-2 space-y-8">
                             <div className="glass rounded-2xl p-6">
-                                <h3 className="text-xl font-semibold mb-4 flex items-center gap-2"><span className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">👨‍💻</span>{t("whoIAm")}</h3>
+                                <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                                    <span className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                                        👨‍💻
+                                    </span>
+                                    {t("whoIAm")}
+                                </h3>
                                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                                     <p>{t("bio1")}</p>
                                     <p>{t("bio2")}</p>
@@ -74,9 +96,15 @@ export default function About() {
                                         className="glass rounded-xl p-4 text-center hover:border-primary/30 transition-all cursor-pointer"
                                         onClick={() => document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' })}
                                     >
-                                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3"><stat.icon className="h-5 w-5 text-primary" /></div>
-                                        <p className="text-2xl font-bold gradient-text">{stat.value}</p>
-                                        <p className="text-xs text-muted-foreground">{stat.label}</p>
+                                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                                            <stat.icon className="h-5 w-5 text-primary" />
+                                        </div>
+                                        <p className="text-2xl font-bold gradient-text">
+                                            {stat.value}
+                                        </p>
+                                        <p className="text-xs text-muted-foreground">
+                                            {stat.label}
+                                        </p>
                                     </div>
                                 ))}
                             </div>

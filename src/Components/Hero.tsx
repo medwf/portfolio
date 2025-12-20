@@ -5,9 +5,8 @@ import { motion, type Variants } from "framer-motion";
 import profilePicture from "@/public/medwf.png";
 import Image from "next/image";
 import {
-    Github, Linkedin, Disc, Mail,
+    Github, Linkedin, Mail,
     Download, ArrowRight, MapPin,
-    Rss,
 } from "lucide-react";
 
 
@@ -67,8 +66,10 @@ export default function Hero() {
                                 </span>
                             </motion.div>
 
-                            <motion.h1 variants={itemVariants} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-3 sm:mb-4">
-                                {t("greeting")} <span className="gradient-text">{t("name")}</span>
+                            <motion.h1 variants={itemVariants}
+                                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-3 sm:mb-4">
+                                {t("greeting")}
+                                <span className="gradient-text">{t("name")}</span>
                             </motion.h1>
 
                             <motion.p variants={itemVariants} className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-3 sm:mb-4">
@@ -84,7 +85,7 @@ export default function Hero() {
                             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
                                 <button
                                     onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                                    className="inline-flex items-center justify-center gap-2 h-12 px-8 text-base rounded-lg font-medium bg-gradient-to-r from-primary to-secondary text-primary-foreground shadow-lg hover:shadow-xl hover:shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                                    className="inline-flex items-center justify-center gap-2 h-12 px-8 text-base rounded-lg font-medium bg-linear-to-r from-primary to-secondary text-primary-foreground shadow-lg hover:shadow-xl hover:shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                                 >
                                     {t("viewProjects")}
                                     <ArrowRight className="h-4 w-4" />
@@ -99,13 +100,16 @@ export default function Hero() {
                             </motion.div>
 
                             <motion.div variants={itemVariants} className="flex items-center justify-center lg:justify-start gap-4">
-                                <a href="https://github.com/medwf" target="_blank" rel="noopener noreferrer" className="p-3 rounded-xl glass glass-hover text-muted-foreground hover:text-primary">
+                                <a href="https://github.com/medwf" target="_blank" rel="noopener noreferrer"
+                                    className="p-3 rounded-xl glass glass-hover text-muted-foreground hover:text-primary">
                                     <Github className="h-5 w-5" />
                                 </a>
-                                <a href="https://www.linkedin.com/in/medwf/" target="_blank" rel="noopener noreferrer" className="p-3 rounded-xl glass glass-hover text-muted-foreground hover:text-primary">
+                                <a href="https://www.linkedin.com/in/medwf/" target="_blank" rel="noopener noreferrer"
+                                    className="p-3 rounded-xl glass glass-hover text-muted-foreground hover:text-primary">
                                     <Linkedin className="h-5 w-5" />
                                 </a>
-                                <a href="mailto:medwf.dev@outlook.com" className="p-3 rounded-xl glass glass-hover text-muted-foreground hover:text-primary">
+                                <a href="mailto:medwf.dev@outlook.com"
+                                    className="p-3 rounded-xl glass glass-hover text-muted-foreground hover:text-primary">
                                     <Mail className="h-5 w-5" />
                                 </a>
                             </motion.div>

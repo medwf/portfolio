@@ -24,7 +24,10 @@ const LanguageSwitcher = () => {
     <div className="flex items-center gap-1 p-1 rounded-lg glass">
       <Link href="/" locale="en" passHref>
         <button
-          className={`relative px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${selectedLanguage === "en" ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
+          className={`relative px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${selectedLanguage === "en" ?
+            "text-primary-foreground" :
+            "text-muted-foreground hover:text-foreground"}`
+          }
         >
           {selectedLanguage === "en" && (
             <motion.div

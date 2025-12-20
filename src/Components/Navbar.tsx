@@ -80,7 +80,9 @@ const Navbar = () => {
             >
               {item.label}
               <span
-                className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${activeSection === item.href.substring(1) ? "w-full" : "w-0 group-hover:w-full"
+                className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${activeSection === item.href.substring(1) ?
+                  "w-full" :
+                  "w-0 group-hover:w-full"
                   }`}
               />
             </button>

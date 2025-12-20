@@ -17,7 +17,6 @@ const Footer = () => {
         { label: t("Navbar.about"), section: "about" },
         { label: t("Navbar.skills"), section: "skills" },
         { label: t("Navbar.projects"), section: "projects" },
-        // { label: t("Navbar.experience"), section: "experience" },
         { label: t("Navbar.contact"), section: "contact" },
     ];
 
@@ -76,7 +75,9 @@ const Footer = () => {
                         <span>{t("Footer.builtWith")}</span>
                         <Heart className="h-4 w-4 text-destructive fill-destructive" />
                         <span>{t("Footer.by")}</span>
-                        <span className="font-semibold text-foreground">Mohamed Wafi</span>
+                        <span className="font-semibold text-foreground">
+                            Mohamed Wafi
+                        </span>
                     </div>
                     <p>© {currentYear} {t("Footer.rights")}</p>
                 </div>

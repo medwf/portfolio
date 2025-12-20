@@ -23,12 +23,16 @@ export default function Skills() {
         {
             title: t("fe"), icon: Brain,
             color: "secondary",
-            skills: ["HTML5", "CSS", "Tailwind CSS", "ReactJS", "NextJS", "AngularJS", "Material-UI", "TreeJS"]
+            skills: ["HTML5", "CSS", "Tailwind CSS", "ReactJS", "NextJS",
+                "AngularJS", "Material-UI", "TreeJS"
+            ]
         },
         {
             title: t("be"), icon: Code2,
             color: "primary",
-            skills: ["Node.js", "Express.js", "NestJS", "Java Spring Boot", "Flask", "FastAPI", "REST API", "GraphQL"]
+            skills: ["Node.js", "Express.js", "NestJS", "Java Spring Boot", "Flask",
+                "FastAPI", "REST API", "GraphQL"
+            ]
         },
         {
             title: t("dataBigData"), icon: Database,
@@ -38,10 +42,10 @@ export default function Skills() {
         {
             title: t("devops"), icon: Cloud,
             color: "primary",
-            skills: ["Linux", "Git", "GitHub / GitLab", "Docker", "Docker Compose", "Kubernetes", "Terraform", "CI/CD (GitHub Actions, GitLab CI)", "Nginx", "Agile / Scrum"]
+            skills: ["Linux", "Git", "GitHub / GitLab", "Docker", "Docker Compose", "Kubernetes",
+                "Terraform", "CI/CD (GitHub Actions, GitLab CI)", "Nginx", "Agile / Scrum"
+            ]
         },
-        // { title: t("webDev"), icon: Code2, color: "primary", 
-        // skills: ["React.js", "TypeScript", "Laravel", "Flask", "FastAPI", "Tailwind CSS", "REST APIs"] },
     ];
 
 

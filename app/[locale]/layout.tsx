@@ -1,12 +1,10 @@
+import "./globals.css";
 // import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import Navbar from "@/src/Components/Navbar";
-// import { Theme } from "@radix-ui/themes";
 import Footer from "@/src/Components/Footer";
-import "./globals.css";
-// import Test from "@/src/Components/Test";
 
 const inter = Inter({ subsets: ["latin"] });
 
