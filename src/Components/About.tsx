@@ -43,29 +43,29 @@ export default function About() {
                                         <Image src={profilePicture} alt="Mohamed Wafi"
                                             className="w-full h-full object-cover object-top" />
                                     </div>
-                                    <h3 className="text-xl font-bold">Mohamed Wafi</h3>
+                                    <h3 className="text-xl font-bold">Mohamed WAFI</h3>
                                     <p className="text-primary text-sm">{th("role")}</p>
                                 </div>
-                                <div className="space-y-4">
-                                    <div className="flex items-center gap-3 text-sm">
+                                <div className="space-y-4 text-center">
+                                    <div className="flex items-center justify-center gap-3 text-sm">
                                         <MapPin className="h-4 w-4 text-primary shrink-0" />
                                         <span className="text-muted-foreground truncate">
                                             {t("location")
                                             }</span>
                                     </div>
-                                    <div className="flex items-center gap-3 text-sm">
+                                    <div className="flex items-center justify-center gap-3 text-sm">
                                         <Phone className="h-4 w-4 text-primary shrink-0" />
                                         <span className="text-muted-foreground">
                                             +212 663 350 206
                                         </span>
                                     </div>
-                                    <div className="flex items-center gap-3 text-sm">
+                                    <div className="flex items-center justify-center gap-3 text-sm">
                                         <Mail className="h-4 w-4 text-primary shrink-0" />
                                         <span className="text-muted-foreground text-xs sm:text-sm truncate">
                                             medwf.dev@outlook.com
                                         </span>
                                     </div>
-                                    <div className="flex items-center gap-3 text-sm">
+                                    <div className="flex items-center justify-center gap-3 text-sm">
                                         <GraduationCap className="h-4 w-4 text-primary shrink-0" />
                                         <span className="text-muted-foreground text-xs sm:text-sm">
                                             Licence Developper Full Stack & DevOps
