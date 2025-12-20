@@ -18,6 +18,7 @@ const Navbar = () => {
     { label: t("about"), href: "#about" },
     { label: t("skills"), href: "#skills" },
     { label: t("projects"), href: "#projects" },
+    { label: t("education"), href: "#education" },
     { label: t("contact"), href: "#contact" },
   ];
 

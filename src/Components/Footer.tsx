@@ -18,6 +18,7 @@ const Footer = () => {
         { label: t("Navbar.about"), section: "about" },
         { label: t("Navbar.skills"), section: "skills" },
         { label: t("Navbar.projects"), section: "projects" },
+        { label: t("Navbar.education"), section: "education" },
         { label: t("Navbar.contact"), section: "contact" },
     ];
 

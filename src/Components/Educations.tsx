@@ -1,7 +1,77 @@
 'use client';
 import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { Briefcase, GraduationCap, Calendar } from "lucide-react";
+import { Briefcase, GraduationCap, Calendar, ChevronDown, Github } from "lucide-react";
+import { useState } from "react";
+import { title } from "process";
+
+// Collapsible Timeline Component for Tags
+interface TimelineItem {
+    title: string;
+    repo?: string;
+}
+
+interface CollapsibleTimelineProps {
+    title: string;
+    tags: TimelineItem[];
+}
+
+function CollapsibleTimeline({ tags, title }: CollapsibleTimelineProps) {
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    return (
+        <div className="mt-4 ml-3">
+            <button
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50 rounded-md px-2 py-1 -ml-2"
+                aria-expanded={isExpanded}
+                aria-controls="timeline-content"
+            >
+                <ChevronDown
+                    className={`h-5 w-5 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
+                    aria-hidden="true"
+                />
+                <span className="gradient-text text-[1rem]">{title}</span>
+                <span className="text-xs text-muted-foreground">
+                    {tags?.length}
+                </span>
+            </button>
+
+            <div
+                id="timeline-content"
+                className={`overflow-hidden transition-all duration-500 ease-in-out ${isExpanded ?
+                    'max-h-500 opacity-100 mt-4' :
+                    'max-h-0 opacity-0'
+                    }`}
+                role="region"
+                aria-labelledby="timeline-button"
+            >
+                <div className="flex flex-wrap gap-4 justify-start ml-4">
+                    {tags?.map((tag, index) => (
+                        <span
+                            key={`${tag?.title}-${index}`}
+                            className="px-2.5 py-1 rounded-md bg-secondary/10 text-secondary text-[0.85rem] font-medium inline-flex items-center gap-2 transition-all duration-300 hover:bg-secondary/20 hover:scale-105"
+                        >
+                            {tag.repo && (
+                                <a
+                                    href={`https://github.com/medwf${tag.repo}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center justify-center hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50 rounded"
+                                    aria-label={`View ${tag.title} on GitHub`}
+                                    onClick={(e) => e.stopPropagation()}
+                                >
+                                    <Github className="h-4 w-4" />
+                                </a>
+                            )}
+                            {tag.title}
+                        </span>
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
+}
 
 
 export default function Educations() {
@@ -27,20 +97,29 @@ export default function Educations() {
                 selectedLanguage === "en"
                     ? "Completed an official Next.js training focused on the App Router architecture, including server components, routing patterns, layouts, data fetching, caching, API routes, and deployment best practices."
                     : "Formation officielle Next.js centrée sur l’architecture App Router : Server Components, routing, layouts, data fetching, caching, API routes et bonnes pratiques de déploiement.",
-            tags: [
-                "Next.js",
-                "React",
-                "App Router",
-                "Server Components",
-                "SSR / SSG",
-                "API Routes"
+            sections: [
+                {
+                    title: "ReactJS Fondations",
+                    tags: [
+                        { title: "JavaScript ES6+" }, { title: "React" },
+                        { title: "JSX" }, { title: "Components" }, { title: "Props & State" },
+                        { title: "Lifecycle Methods" }, { title: "Hooks" },
+                    ]
+                },
+                {
+                    title: "Next.js Page Router",
+                    tags: [
+                        { title: "Pages" }, { title: "Routing" }, { title: "Data Fetching" }, { title: "API Routes" },
+                        { title: "SSR / SSG" }, { title: "Deployment" },
+                    ]
+                },
             ]
         },
         {
             title:
                 selectedLanguage === "en"
-                    ? "Software Engineering | Backend Development"
-                    : "Software Engineering | Backend Development",
+                    ? "Software Engineering Backend Development"
+                    : "Software Engineering Backend Development",
             company:
                 selectedLanguage === "en"
                     ? "ALX Africa (Holberton School) – Remote"
@@ -53,29 +132,118 @@ export default function Educations() {
                 selectedLanguage === "en"
                     ? "Completed ALX Africa’s intensive project-based Software Engineering program powered by Holberton. Specialized in backend development, systems engineering, networking, and algorithms through real-world projects such as WorkHubConnect."
                     : "Programme intensif ALX Africa basé sur des projets réels (Holberton). Spécialisation en développement backend, systèmes, réseaux et algorithmes, avec des projets tels que WorkHubConnect.",
-            tags: [
-                "Python",
-                "Flask",
-                "Django",
-                "Node.js",
-                "ES6+",
-                "REST API",
-                "GraphQL",
-                "SQL",
-                "PostgreSQL",
-                "Linux",
-                "DevOps",
-                "Nginx",
-                "HAProxy",
-                "UFW",
-                "SSH",
-                "DNS",
-                "SSL/TLS",
-                "Algorithms",
-                "Data Structures",
-                "C Programming",
-                "Git",
-                "Shell Scripting"
+            sections: [
+                {
+                    title: "Fondations of Software Engineering",
+                    tags: [
+                        {
+                            title: "Git & GitHub",
+                            repo: "/alx-pre_course/tree/master/0x01-git"
+                        },
+                        {
+                            title: "command-line & Editors",
+                            repo: "/alx-pre_course"
+                        },
+                        {
+                            title: "Bash Introduction to advanced",
+                            repo: "/alx-system_engineering-devops"
+                        },
+                        {
+                            title: "C Programming basic to intermediate",
+                            repo: "/alx-low_level_programming"
+                        },
+                        {
+                            title: "Build your own Printf",
+                            repo: "/printf"
+                        },
+                        {
+                            title: "build your own Shell",
+                            repo: "/simple_shell"
+                        },
+
+                        {
+                            title: "Algorithms & Data Structures basics",
+                            repo: "/sorting_algorithms"
+                        },
+                        {
+                            title: "Python Programming basic to advanced",
+                            repo: "/alx-higher_level_programming"
+                        },
+                        {
+                            title: "File I/O serialization/deserialization",
+                            repo: ""
+                        },
+                        {
+                            title: "HTML5 & CSS fundamentals",
+                            repo: ""
+                        },
+                        {
+                            title: "SQL & Databases basics",
+                            repo: "/0x0D-SQL_introduction"
+                        },
+                        {
+                            title: "Networking fundamentals",
+                            repo: "/alx-system_engineering-devops/0x07-networking_basics"
+                        },
+                        {
+                            title: "RESTful API development",
+                            repo: ""
+                        },
+                        {
+                            title: "SSH & SSL/TLS basics",
+                            repo: "/alx-system_engineering-devops/0x10-https_ssl"
+                        },
+                        {
+                            title: "Firewalls & Security essentials",
+                            repo: "/alx-system_engineering-devops/0x13-firewall"
+                        },
+
+                    ]
+                },
+                {
+                    title: "Specialization in Backend Development",
+                    tags: [
+                        {
+                            title: "Advenced ES6+ & Unittests", repo: "/alx-backend-javascript"
+                        },
+                        {
+                            title: "TypeScript", repo: "/alx-backend-javascript"
+                        },
+                        {
+                            title: "MySQL advenced & NoSQL databases", repo: "/alx-backend-storage"
+                        },
+                        {
+                            title: "API pagination", repo: "/alx-backend"
+                        },
+                        {
+                            title: "Caching strategies", repo: ""
+                        },
+                        {
+                            title: "Unit & integration testing", repo: ""
+                        },
+                        {
+                            title: "Internationalization(i18n)", repo: ""
+                        },
+                        {
+                            title: "Personal data handling", repo: ""
+                        },
+                        {
+                            title: "User authentication", repo: ""
+                        },
+                        {
+                            title: "Node.js fundamentals", repo: ""
+                        },
+                        {
+                            title: "Queueing systems", repo: ""
+                        },
+                        {
+                            title: "GraphQL API development", repo: ""
+                        },
+                        {
+                            title: "Asynchronous file API", repo: ""
+                        },
+                    ]
+                }
             ]
         }
     ];
@@ -90,8 +258,42 @@ export default function Educations() {
             description: selectedLanguage === "en" ?
                 "Currently pursuing a Bachelor's degree in Full-Stack Development and DevOps, focusing on web development, cloud computing, and software engineering principles." :
                 "Actuellement en Licence Développeur Full-Stack & DevOps, axée sur le développement web, le cloud computing et les principes d'ingénierie logicielle.",
-            tags: ["Full-Stack Development", "DevOps",
-                "Cloud Computing", "Software Engineering"
+            sections: [
+                {
+                    title: "Fondations of Full-Stack Development",
+                    tags: [
+                        { title: "HTML5 & CSS3" },
+                        { title: "Ecma Script" },
+                        { title: "TypeScript" },
+                        { title: "Java Programming" },
+                    ]
+                },
+                {
+                    title: "Frontend Development",
+                    tags: [
+                        { title: "ReactJS" },
+                        { title: "AngularJS" },
+                    ],
+                },
+                {
+                    title: "Backend Development & Databases",
+                    tags: [
+                        { title: "J2EE" },
+                        { title: "Spring Boot" },
+                        { title: "PL/SQL" },
+                        { title: "NoSQL" },
+                    ],
+                },
+                {
+                    title: "DevOps",
+                    tags: [
+                        { title: "GIT" },
+                        { title: "Docker containerization" },
+                        { title: "Kubernetes" },
+                        { title: "Ansible Automation" },
+                        { title: "Azure DevOps" },
+                    ],
+                }
             ]
         },
         {
@@ -113,7 +315,7 @@ export default function Educations() {
     ];
 
     return (
-        <section id="experience" className="py-16 sm:py-24 relative overflow-hidden">
+        <section id="education" className="py-16 sm:py-24 relative overflow-hidden">
             <div className="absolute inset-0 grid-pattern opacity-30" />
             <div className="container mx-auto px-4 sm:px-6 relative z-10">
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
@@ -161,15 +363,16 @@ export default function Educations() {
                                         <p className="text-muted-foreground text-sm mb-4">
                                             {job.description}
                                         </p>
-                                        <div className="flex flex-wrap gap-2">
-                                            {job.tags.map((tag) => (
-                                                <span key={tag}
-                                                    className="px-2.5 py-1 rounded-md bg-primary/10 text-primary text-xs font-medium">
-                                                    {tag}
-                                                </span>
+                                        {
+                                            job.sections &&
+                                            job.sections.map((section, index) => (
+                                                <CollapsibleTimeline
+                                                    key={index}
+                                                    tags={section.tags}
+                                                    title={section.title}
+                                                />
                                             ))
-                                            }
-                                        </div>
+                                        }
                                     </div>
                                 </motion.div>
                             ))}
@@ -209,15 +412,15 @@ export default function Educations() {
                                                 {edu.description}
                                             </p>
                                         }
-                                        {edu?.tags &&
-                                            <div className="flex flex-wrap gap-2 mt-4">
-                                                {edu.tags.map((tag) => (
-                                                    <span key={tag}
-                                                        className="px-2.5 py-1 rounded-md bg-secondary/10 text-secondary text-xs font-medium">
-                                                        {tag}
-                                                    </span>
-                                                ))}
-                                            </div>
+                                        {
+                                            edu.sections &&
+                                            edu.sections.map((section, index) => (
+                                                <CollapsibleTimeline
+                                                    key={index}
+                                                    tags={section.tags}
+                                                    title={section.title}
+                                                />
+                                            ))
                                         }
                                     </div>
                                 </motion.div>
