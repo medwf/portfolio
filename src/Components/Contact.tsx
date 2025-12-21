@@ -27,9 +27,23 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Simulate form submission
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      alert(t("formSuccess"));
+      // Format message for WhatsApp
+      const whatsappMessage = `*New Contact Form Submission*%0A%0A` +
+        `*Name:* ${formData.name}%0A` +
+        `*Email:* ${formData.email}%0A` +
+        `*Subject:* ${formData.subject || 'N/A'}%0A%0A` +
+        `*Message:*%0A${formData.message}`;
+
+      // Your WhatsApp number (format: country code + number without + or spaces)
+      const whatsappNumber = "212663350206";
+
+      // Open WhatsApp
+      window.open(
+        `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`,
+        '_blank'
+      );
+
+      // Reset form
       setFormData({ name: "", email: "", subject: "", message: "" });
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
@@ -47,7 +61,7 @@ export default function Contact() {
           viewport={{ once: true }} transition={{ duration: 0.6 }}
           className="text-center mb-10 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
-            {t("title")}
+            {t("title")} {" "}
             <span className="gradient-text">
               {t("connect")}
             </span>

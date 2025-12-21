@@ -68,7 +68,7 @@ export default function Hero() {
 
                             <motion.h1 variants={itemVariants}
                                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-3 sm:mb-4">
-                                {t("greeting")}
+                                {t("greeting")} {" "}
                                 <span className="gradient-text">{t("name")}</span>
                             </motion.h1>
 

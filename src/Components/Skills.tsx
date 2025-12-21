@@ -65,7 +65,7 @@ export default function Skills() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-10 sm:mb-16">
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
-                        {t("title")}
+                        {t("title")} {" "}
                         <span className="gradient-text">
                             {t("techStack")}
                         </span>
