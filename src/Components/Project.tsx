@@ -7,6 +7,7 @@ import {
     Boxes, Car, QrCode
 } from "lucide-react";
 import Image from "next/image";
+import { desc } from "framer-motion/client";
 
 export default function Projects() {
     const selectlanguage = useLocale();
@@ -57,18 +58,25 @@ export default function Projects() {
             badgeText: selectlanguage === "en" ? "Incremental" : "Incrémentiel",
             github: "https://github.com/medwf"
         },
-    ];
-
-    const freeLanceProjects = [
         {
             title: "Iktron",
-            icon: '/Icons/iktron-logo.png',
+            description: selectlanguage === "en" ?
+                "A web application for managing industrial equipment maintenance, \
+                    including scheduling, tracking, and reporting features." :
+                "Une application web de gestion de la maintenance des équipements industriels,\
+                    incluant des fonctionnalités de planification, de suivi et de reporting.",
+            icon: Shield,
             tags: ["Python", "Flask", "ReactJS", "Docker", "Ansible"],
             github: "https://iktron.ma"
         },
         {
             title: "Persobike",
-            icon: '/Icons/persobike-logo.png',
+            description: selectlanguage === "en" ?
+                "A web application that provides personalized bike recommendations, \
+                    maintenance tips, and cycling routes based on user preferences and location." :
+                "Une application web qui fournit des recommandations de vélos personnalisées,\
+                    des conseils d'entretien et des itinéraires cyclables en fonction des préférences et de la localisation de l'utilisateur.",
+            icon: Shield,
             tags: ["Python", "Flask", "ReactJS", "Docker", "Ansible"],
             github: "https://persobike.fr",
             badge: true,
@@ -76,13 +84,16 @@ export default function Projects() {
         },
         {
             title: "Deliciouse Recipes",
-            icon: '/Icons/deliciousrecipes-logo.png',
+            description: selectlanguage === "en" ?
+                "A web application that allows users to discover, share, and manage delicious recipes from around the world." :
+                "Une application web qui permet aux utilisateurs de découvrir, partager et gérer de délicieuses recettes du monde entier.",
+            icon: Shield,
             tags: [
                 "TypeScript", "Flask", "Docker", "Ansible",
                 "ReactJS", "tailwindcss", "CSS", "REST API",
             ],
             github: "https://www.deliciousrecipes.us"
-        },
+        }
     ];
 
     const otherProjects = [
@@ -200,49 +211,6 @@ export default function Projects() {
                     ))}
                 </div>
 
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }} transition={{ duration: 0.6 }}
-                    className="max-w-7xl mx-auto">
-                    <h3 className="text-2xl font-bold text-center mb-8">{t("free")}</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-3">
-                        {freeLanceProjects.map((project, index) => (
-                            <motion.a key={project.title} href={project.github} target="_blank"
-                                rel="noopener noreferrer" initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: index * 0.05 }} whileHover={{ y: -4 }}
-                                className="glass rounded-xl p-5 hover:border-primary/30 transition-all group">
-                                {project.badge &&
-                                    <div className="absolute -top-3 -right-3 flex items-center gap-1 px-3 py-1 rounded-full bg-linear-to-r from-amber-500 to-yellow-500 text-background text-xs font-semibold z-10">
-                                        <Rocket className="h-3 w-3" /> {project.badgeText}
-                                    </div>}
-                                <div className="flex items-start gap-4">
-                                    <div className="p-2.5 rounded-lg bg-primary/10 text-primary">
-                                        <Image width={28} height={28} src={project.icon}
-                                            alt={project.title} className="h-22 w-full" />
-                                    </div>
-                                    <div className="flex-1">
-                                        <div className="flex items-center justify-between mb-2">
-                                            <h4 className="font-semibold text-xl group-hover:text-primary transition-colors">
-                                                {project.title}
-                                            </h4>
-                                            <ExternalLink className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
-                                        </div>
-                                        <div className="flex flex-wrap gap-1.5">
-                                            {project.tags.map((tag) =>
-                                            (
-                                                <span
-                                                    key={tag}
-                                                    className="px-2 py-0.5 rounded bg-muted/50 text-muted-foreground text-xs">
-                                                    {tag}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
-                                </div>
-                            </motion.a>
-                        ))}
-                    </div>
-                </motion.div>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }} transition={{ duration: 0.6 }} className="max-w-7xl mx-auto mt-14">
