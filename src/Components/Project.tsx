@@ -6,8 +6,6 @@ import {
     , Shield, Newspaper, Droplets,
     Boxes, Car, QrCode
 } from "lucide-react";
-import Image from "next/image";
-import { desc } from "framer-motion/client";
 
 export default function Projects() {
     const selectlanguage = useLocale();
@@ -85,14 +83,23 @@ export default function Projects() {
         {
             title: "Deliciouse Recipes",
             description: selectlanguage === "en" ?
-                "A web application that allows users to discover, share, and manage delicious recipes from around the world." :
-                "Une application web qui permet aux utilisateurs de découvrir, partager et gérer de délicieuses recettes du monde entier.",
+                "A web application that allows users to discover, share, and manage delicious recipes from around the world, with admin dashboard management." :
+                "Une application web qui permet aux utilisateurs de découvrir, partager et gérer de délicieuses recettes du monde entier, avec une gestion du tableau de bord administrateur.",
             icon: Shield,
             tags: [
                 "TypeScript", "Flask", "Docker", "Ansible",
                 "ReactJS", "tailwindcss", "CSS", "REST API",
             ],
             github: "https://www.deliciousrecipes.us"
+        },
+        {
+            title: "Portfolio Website",
+            description: selectlanguage === "en" ?
+                "A personal portfolio website to showcase projects, skills, and experience, built with modern web technologies." :
+                "Un site web de portfolio personnel pour présenter des projets, des compétences et de l'expérience, construit avec des technologies web modernes.",
+            icon: Rocket,
+            tags: ["TypeScript", "ReactJS", "NextJS", "next-intl", "Tailwind CSS", "Eslint", "Framer Motion"],
+            github: "https://github.com/medwf/portfolio",
         }
     ];
 
