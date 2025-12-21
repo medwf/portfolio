@@ -3,7 +3,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import Navbar from "@/src/Components/Navbar";
+import Header from "@/src/Components/Header";
 import Footer from "@/src/Components/Footer";
 import Script from "next/script";
 
@@ -27,7 +27,7 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           {/* <Theme appearance="dark"> */}
           <div className="min-h-screen bg-background flex flex-col overflow-x-hidden">
-            <Navbar />
+            <Header />
             <main className="flex-1 overflow-x-hidden">
               {children}
             </main>
