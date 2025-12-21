@@ -2,12 +2,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-// import { Button } from "@radix-ui/themes";
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 
-const Navbar = () => {
+const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
@@ -41,15 +40,20 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  });
 
   const scrollToSection = (href: string) => {
-    const sectionId = href.substring(1);
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
+    // Close mobile menu first
     setIsMobileMenuOpen(false);
+
+    // Wait for menu animation to complete before scrolling
+    setTimeout(() => {
+      const sectionId = href.substring(1);
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 300); // Match the menu animation duration
   };
 
   return (
@@ -93,9 +97,6 @@ const Navbar = () => {
         {/* Right side: Language + CTA */}
         <div className="hidden lg:flex items-center gap-4">
           <LanguageSwitcher />
-          {/* <Button variant="gradient" size="sm" onClick={() => scrollToSection("#contact")}>
-            {t("nav.getInTouch")}
-          </Button> */}
         </div>
 
         {/* Mobile: Language + Menu */}
@@ -151,4 +152,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;
