@@ -50,7 +50,7 @@ export default function About() {
                                     <div className="flex items-center justify-center gap-3 text-sm">
                                         <MapPin className="h-4 w-4 text-primary shrink-0" />
                                         <span className="text-muted-foreground truncate">
-                                            {t("location")
+                                            {th("location")
                                             }</span>
                                     </div>
                                     <div className="flex items-center justify-center gap-3 text-sm">

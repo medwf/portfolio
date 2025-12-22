@@ -8,14 +8,13 @@
     "contact": "Contact"
   },
   "HomePage": {
-    "location": "Casablanca, Morocco",
     "greeting": "Bounjour, je suis",
-    "name": "Mohamed",
     "role": "Développeur Full-Stack et DevOps",
     "description": "Spécialisé dans le développement Full-Stack et DevOps.<br></br> Je construis des applications web modernes et des infrastructures évolutives.",
-    "viewProjects": "Voir les projets",
-    "downloadCV": "Télécharger le CV",
     "openForPFE": "Je suis disponible pour un stage",
+    "location": "Casablanca, Maroc",
+    "downloadCV": "Télécharger le CV",
+    "viewProjects": "Voir les projets",
     "learnMore": "En savoir plus"
   },
   "about": {
@@ -48,23 +47,23 @@
     "title": "Compétences &",
     "techStack": "Technologies",
     "subtitle": "Une boîte à outils complète pour construire des systèmes intelligents du prototype à la production",
-    "aiMl": "IA & Machine Learning",
-    "nlpLlms": "NLP & LLMs",
-    "computerVision": "Vision par Ordinateur",
-    "dataBigData": "Data & Big Data",
-    "webDev": "Développement Web",
-    "cloudDevops": "Cloud & DevOps",
-    "softSkills": "Soft Skills",
-    "certifications": "Licences & Certifications"
+    "lgp": "IA & Machine Learning",
+    "fe": "NLP & LLMs",
+    "be": "Développement Backend",
+    "dataBigData": "Bases de données SQL & NoSQL",
+    "devops": "DevOps Outils"
   },
+
   "Projects": {
     "title": "Projets",
     "featured": "Phares",
-    "subtitle": "Solutions IA réelles pour la cybersécurité, le NLP, l'IoT et la vision par ordinateur",
+    "subtitle": "Sous",
     "other": "Autres Projets",
     "viewCode": "Voir le Code",
-    "viewAll": "Voir tous les dépôts sur GitHub"
+    "domain": "Site Web",
+    "viewAll": "GitHub"
   },
+
   "Experience": {
     "title": "Expérience &",
     "education": "Formation",
@@ -74,6 +73,7 @@
     "awards": "Prix & Distinctions",
     "volunteering": "Bénévolat & Leadership"
   },
+
   "contact": {
     "title": "Restons en",
     "connect": "Contact",
@@ -86,6 +86,7 @@
     "lookingForPFE": "Recherche de Stage PFE",
     "pfeDescription": "Je recherche activement un stage de fin d'études (PFE) à partir de février 2026 pour concevoir et déployer des solutions IA intelligentes à fort impact.",
     "openForOpportunities": "Ouvert aux opportunités",
+
     "name": "Nom",
     "email": "Email",
     "subject": "Sujet",
@@ -101,8 +102,8 @@
   },
 
   "Footer": {
-    "footer.builtWith": "Construit avec",
-    "footer.by": "par",
-    "footer.rights": "Tous droits réservés."
+    "builtWith": "Construit avec",
+    "by": "par",
+    "rights": "Tous droits réservés."
   }
 }

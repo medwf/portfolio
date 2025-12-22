@@ -115,7 +115,9 @@ export default function Skills() {
                     whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                     className="max-w-4xl mx-auto mb-16">
-                    <h3 className="text-2xl font-bold text-center mb-8">{t("softSkills")}</h3>
+                    <h3 className="text-2xl font-bold text-center mb-8">
+                        Soft Skills
+                    </h3>
                     <div className="flex flex-wrap justify-center gap-3">
                         {softSkills.map(
                             (skill) => (

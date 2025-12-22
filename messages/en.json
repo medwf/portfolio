@@ -8,14 +8,13 @@
     "contact": "Contact"
   },
   "HomePage": {
-    "location": "Casablanca, Morocco",
     "greeting": "Hi, I'm",
-    "name": "Mohamed",
     "role": "Full-Stack Developer & DevOps",
     "description": "Specializing in Full-Stack Development and DevOps. <br></br> I build modern web applications and scalable infrastructure.",
-    "viewProjects": "View Projects",
-    "downloadCV": "Download Resume",
     "openForPFE": "I'm available for hire",
+    "location": "Casablanca, Morocco",
+    "downloadCV": "Download Resume",
+    "viewProjects": "View Projects",
     "learnMore": "Learn more"
   },
 
@@ -24,7 +23,6 @@
     "me": "Me",
     "subtitle": "passionate about devops and web development to build scalable and efficient solutions.",
     "whoIAm": "Who I Am",
-    "location": "Casablanca, Morocco",
     "bio1": "I am Mohamed Wafi, a licence graduate in full-stack development, passionate about web development and graduate from Software Engineering.",
     "bio2": "I have a strong expertise in designing and developing web applications, managing cloud infrastructure, and implementing DevOps practices to streamline development workflows.",
     "bio3": "Skilled in cloud deployment, full-stack development, and data engineering, I enjoy turning complex data and algorithms into scalable, high-impact solutions.",
@@ -52,21 +50,20 @@
     "lgp": "Languages Programming",
     "fe": "Frontend Development",
     "be": "Backend Development",
-    "computerVision": "Computer Vision",
-    "dataBigData": "Data & Big Data",
-    "devops": "DevOps",
-    "softSkills": "Soft Skills",
-    "certifications": "Licenses & Certifications"
+    "dataBigData": "SQL & NoSQL Databases",
+    "devops": "DevOps Tools"
   },
+
   "Projects": {
     "title": "Featured",
     "featured": "Projects",
-    "subtitle": "Real-world AI solutions tackling cybersecurity, NLP, IoT, and computer vision challenges",
-    "free": "Freelance Projects",
+    "subtitle": "Sub",
     "other": "Other Projects",
     "viewCode": "View Code",
-    "viewAll": "View all repositories on GitHub"
+    "domain": "Website",
+    "viewAll": "GitHub"
   },
+
   "Experience": {
     "title": "Certifications &",
     "education": "Education",
@@ -76,6 +73,7 @@
     "awards": "Awards & Distinctions",
     "volunteering": "Volunteering & Leadership"
   },
+
   "contact": {
     "title": "Let's",
     "connect": "Connect",
@@ -88,6 +86,7 @@
     "lookingForPFE": "Looking for PFE Internship",
     "pfeDescription": "I'm actively seeking a final-year internship (PFE) starting February 2026 to design and deploy intelligent, high-impact AI solutions.",
     "openForOpportunities": "Open for opportunities",
+
     "name": "Name",
     "email": "Email",
     "subject": "Subject",

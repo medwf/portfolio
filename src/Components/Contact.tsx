@@ -9,6 +9,7 @@ import { useState } from "react";
 
 export default function Contact() {
   const t = useTranslations("contact");
+  const th = useTranslations("HomePage");
 
   const [formData, setFormData] = useState({
     name: "",
@@ -114,7 +115,7 @@ export default function Contact() {
                       Location
                     </p>
                     <p className="font-medium text-sm sm:text-base">
-                      location
+                      {th("location")}
                     </p>
                   </div>
                 </div>
