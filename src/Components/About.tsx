@@ -39,7 +39,8 @@ export default function About() {
                                 <div className="text-center mb-6">
                                     <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-4 border-primary/30">
                                         <Image src={profilePicture} alt="Mohamed Wafi"
-                                            className="w-full h-full object-cover object-top" />
+                                            className="w-full h-full object-cover object-top"
+                                            priority />
                                     </div>
                                     <h3 className="text-xl font-bold">Mohamed WAFI</h3>
                                     <p className="text-primary text-sm">{th("role")}</p>

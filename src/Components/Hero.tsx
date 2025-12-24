@@ -63,7 +63,8 @@ export default function Hero() {
                                 className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-primary/30 glow-gradient">
                                 <Image src={profilePicture}
                                     alt="Mohamed WAFI"
-                                    className="w-full h-full object-cover object-top" />
+                                    className="w-full h-full object-cover object-top"
+                                    priority />
                             </div>
                             {/* <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass text-[12px] sm:text-xs text-muted-foreground whitespace-nowrap">
                                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
