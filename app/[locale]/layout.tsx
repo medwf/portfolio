@@ -6,6 +6,7 @@ import { getMessages } from "next-intl/server";
 import Header from "@/src/Components/Header";
 import Footer from "@/src/Components/Footer";
 import Script from "next/script";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,12 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
+      <Head>
+        <title>Mohamed WAFI - Full Stack Developer Portfolio</title>
+        <meta name="description" content="Portfolio of Mohamed WAFI, a Full Stack Developer specializing in building modern web applications using Next.js, React, and Node.js." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body className={`${inter.className}`}
       >
         <NextIntlClientProvider messages={messages}>

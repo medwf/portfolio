@@ -13,6 +13,7 @@ interface CollapsibleTimelineProps {
 
 export function CollapsibleTimeline({ tags, title }: CollapsibleTimelineProps) {
     const [isExpanded, setIsExpanded] = useState(false);
+    const contentId = `timeline-content-${title.toLowerCase().replace(/\s+/g, '-')}`;
 
     return (
         <div className="mt-4 ml-3">
@@ -20,7 +21,7 @@ export function CollapsibleTimeline({ tags, title }: CollapsibleTimelineProps) {
                 onClick={() => setIsExpanded(!isExpanded)}
                 className="flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50 rounded-md px-2 py-1 -ml-2"
                 aria-expanded={isExpanded}
-                aria-controls="timeline-content"
+                aria-controls={contentId}
             >
                 <ChevronDown
                     className={`h-5 w-5 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
@@ -33,7 +34,7 @@ export function CollapsibleTimeline({ tags, title }: CollapsibleTimelineProps) {
             </button>
 
             <div
-                id="timeline-content"
+                id={contentId}
                 className={`overflow-hidden transition-all duration-500 ease-in-out ${isExpanded ?
                     'max-h-500 opacity-100 mt-4' :
                     'max-h-0 opacity-0'

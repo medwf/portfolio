@@ -16,7 +16,7 @@ const Footer = () => {
     };
 
     const navLinks = navItemsData.map(item => ({
-        label: t(`Navbar.${item.translationKey}` as any),
+        label: t(`Navbar.${item.translationKey}` as string),
         section: item.href.substring(1)
     }));
 
