@@ -1,11 +1,10 @@
 'use client';
 import { motion } from "framer-motion";
-import {
-  Mail, Phone, MapPin, Send,
-  Github, Linkedin, Download
-} from "lucide-react";
+import { Mail, Phone, MapPin, Send, Download } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
+import { contactInfo, cvFiles } from "@/src/data/contact";
+import { socialLinks } from "@/src/data/hero";
 
 export default function Contact() {
   const t = useTranslations("contact");
@@ -36,7 +35,7 @@ export default function Contact() {
         `*Message:*%0A${formData.message}`;
 
       // Your WhatsApp number (format: country code + number without + or spaces)
-      const whatsappNumber = "212663350206";
+      const whatsappNumber = contactInfo.whatsappNumber;
 
       // Open WhatsApp
       window.open(
@@ -79,7 +78,7 @@ export default function Contact() {
             <div>
               <h3 className="text-xl font-semibold mb-6">{t("getInTouch")}</h3>
               <div className="space-y-4">
-                <a href="mailto:medwf.dev@outlook.com"
+                <a href={`mailto:${contactInfo.email}`}
                   className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 glass rounded-xl hover:border-primary/30 transition-all group">
                   <div className="p-2 sm:p-2.5 rounded-lg bg-primary/10 text-primary shrink-0">
                     <Mail className="h-4 sm:h-5 w-4 sm:w-5" />
@@ -88,11 +87,11 @@ export default function Contact() {
                     {t("email")}
                   </p>
                     <p className="font-medium group-hover:text-primary transition-colors text-sm sm:text-base truncate">
-                      medwf.dev@outlook.com
+                      {contactInfo.email}
                     </p>
                   </div>
                 </a>
-                <a href="tel:+212663350206"
+                <a href={`tel:${contactInfo.phone}`}
                   className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 glass rounded-xl hover:border-primary/30 transition-all group">
                   <div className="p-2 sm:p-2.5 rounded-lg bg-primary/10 text-primary shrink-0">
                     <Phone className="h-4 sm:h-5 w-4 sm:w-5" />
@@ -102,7 +101,7 @@ export default function Contact() {
                       Phone
                     </p>
                     <p className="font-medium group-hover:text-primary transition-colors text-sm sm:text-base">
-                      +212 663 350 206
+                      {contactInfo.phone}
                     </p>
                   </div>
                 </a>
@@ -124,24 +123,28 @@ export default function Contact() {
             <div>
               <h3 className="text-lg font-semibold mb-4">{t("followMe")}</h3>
               <div className="flex gap-3">
-                <a href="https://github.com/medwf" target="_blank" rel="noopener noreferrer"
-                  className="p-3 glass rounded-xl hover:border-primary/50 hover:text-primary transition-all">
-                  <Github className="h-5 w-5" />
-                </a>
-                <a href="https://www.linkedin.com/in/medwf/" target="_blank" rel="noopener noreferrer"
-                  className="p-3 glass rounded-xl hover:border-primary/50 hover:text-primary transition-all">
-                  <Linkedin className="h-5 w-5" />
-                </a>
-                <a href="mailto:medwf.dev@outlook.com" className="p-3 rounded-xl glass glass-hover text-muted-foreground hover:text-primary">
-                  <Mail className="h-5 w-5" />
-                </a>
+                {socialLinks.map((link) => {
+                  const Icon = link.icon;
+                  return (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target={link.href.startsWith('http') ? "_blank" : undefined}
+                      rel={link.href.startsWith('http') ? "noopener noreferrer" : undefined}
+                      className="p-3 glass rounded-xl hover:border-primary/50 hover:text-primary transition-all"
+                      aria-label={link.label}
+                    >
+                      <Icon className="h-5 w-5" />
+                    </a>
+                  );
+                })}
               </div>
             </div>
             <div>
               <h3 className="text-lg font-semibold mb-4">{t("downloadResume")}</h3>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
-                  href="/MOHAMED_WAFI_en.pdf"
+                  href={cvFiles.en}
                   download
                   className="flex-1 inline-flex items-center justify-center gap-2 h-10 px-5 py-2 rounded-lg text-sm font-medium border border-muted-foreground/30 bg-transparent text-foreground hover:bg-muted hover:border-primary/50 hover:text-primary transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >
@@ -149,7 +152,7 @@ export default function Contact() {
                   {t("englishCV")}
                 </a>
                 <a
-                  href="/MOHAMED_WAFI_fr.pdf"
+                  href={cvFiles.fr}
                   download
                   className="flex-1 inline-flex items-center justify-center gap-2 h-10 px-5 py-2 rounded-lg text-sm font-medium border border-muted-foreground/30 bg-transparent text-foreground hover:bg-muted hover:border-primary/50 hover:text-primary transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >

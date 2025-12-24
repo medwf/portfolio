@@ -4,10 +4,8 @@ import { useLocale, useTranslations } from "next-intl";
 import { motion, type Variants } from "framer-motion";
 import profilePicture from "@/public/medwf.png";
 import Image from "next/image";
-import {
-    Github, Linkedin, Mail,
-    Download, ArrowRight, MapPin,
-} from "lucide-react";
+import { Download, ArrowRight, MapPin } from "lucide-react";
+import { socialLinks } from "@/src/data/hero";
 
 
 export default function Hero() {
@@ -124,18 +122,21 @@ export default function Hero() {
                             </motion.div>
 
                             <motion.div variants={itemVariants} className="flex items-center justify-center lg:justify-start gap-4">
-                                <a href="https://github.com/medwf" target="_blank" rel="noopener noreferrer"
-                                    className="p-3 rounded-xl glass glass-hover text-muted-foreground hover:text-primary">
-                                    <Github className="h-5 w-5" />
-                                </a>
-                                <a href="https://www.linkedin.com/in/medwf/" target="_blank" rel="noopener noreferrer"
-                                    className="p-3 rounded-xl glass glass-hover text-muted-foreground hover:text-primary">
-                                    <Linkedin className="h-5 w-5" />
-                                </a>
-                                <a href="mailto:medwf.dev@outlook.com"
-                                    className="p-3 rounded-xl glass glass-hover text-muted-foreground hover:text-primary">
-                                    <Mail className="h-5 w-5" />
-                                </a>
+                                {socialLinks.map((link) => {
+                                    const Icon = link.icon;
+                                    return (
+                                        <a
+                                            key={link.label}
+                                            href={link.href}
+                                            target={link.href.startsWith('http') ? "_blank" : undefined}
+                                            rel={link.href.startsWith('http') ? "noopener noreferrer" : undefined}
+                                            className="p-3 rounded-xl glass glass-hover text-muted-foreground hover:text-primary"
+                                            aria-label={link.label}
+                                        >
+                                            <Icon className="h-5 w-5" />
+                                        </a>
+                                    );
+                                })}
                             </motion.div>
                         </div>
                     </div>

@@ -1,10 +1,7 @@
 'use client';
 import { motion } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
-import {
-    Cloud, Database,
-    Code2, Brain
-} from "lucide-react";
+import { skillCategories, softSkillsByLanguage } from "@/src/data/skills";
 
 
 
@@ -12,47 +9,15 @@ export default function Skills() {
     const t = useTranslations("skills");
     const selectedLanguage = useLocale();
 
-    // Skills data
-    const skillCategories = [
-        {
-            title: t("lgp"),
-            icon: Brain,
-            color: "primary",
-            skills: ["C", "Python", "JavaScript", "TypeScript", "Java"]
-        },
-        {
-            title: t("fe"), icon: Brain,
-            color: "secondary",
-            skills: ["HTML5", "CSS", "Tailwind CSS", "ReactJS", "NextJS",
-                "AngularJS", "Material-UI", "TreeJS"
-            ]
-        },
-        {
-            title: t("be"), icon: Code2,
-            color: "primary",
-            skills: ["Node.js", "Express.js", "NestJS", "Java Spring Boot", "Flask",
-                "FastAPI", "REST API", "GraphQL"
-            ]
-        },
-        {
-            title: t("dataBigData"), icon: Database,
-            color: "secondary",
-            skills: ["SQL", "MySQL/MariaDB", "PostgreSQL", "PLSQL", "MongoDB", "RedisJS"]
-        },
-        {
-            title: t("devops"), icon: Cloud,
-            color: "primary",
-            skills: ["Linux", "Git", "GitHub / GitLab", "Docker", "Docker Compose", "Kubernetes",
-                "Terraform", "CI/CD (GitHub Actions, GitLab CI)", "Nginx", "Agile / Scrum"
-            ]
-        },
-    ];
+    // Map skill categories with translations
+    const categories = skillCategories.map(category => ({
+        title: t(category.translationKey as string),
+        icon: category.icon,
+        color: category.color,
+        skills: category.skills
+    }));
 
-
-    const softSkills = selectedLanguage === "en"
-        ? ["Leadership", "Team Management", "Project Management", "Problem Solving", "Communication", "Critical Thinking"]
-        : ["Leadership", "Gestion d'équipe", "Gestion de projet", "Résolution de problèmes", "Communication", "Esprit critique"];
-
+    const softSkills = softSkillsByLanguage[selectedLanguage as keyof typeof softSkillsByLanguage] || softSkillsByLanguage.en;
 
     return (
         <section id="skills" className="py-16 sm:py-24 relative overflow-hidden">
@@ -76,7 +41,7 @@ export default function Skills() {
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mb-16">
-                    {skillCategories.map((category, index) => (
+                    {categories.map((category, index) => (
                         <motion.div key={category.title}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}

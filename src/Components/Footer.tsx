@@ -1,7 +1,9 @@
 'use client';
 
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Heart } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { navItems as navItemsData } from "@/src/data/navigation";
+import { socialLinks } from "@/src/data/hero";
 const Footer = () => {
     const t = useTranslations();
     const currentYear = new Date().getFullYear();
@@ -13,14 +15,10 @@ const Footer = () => {
         }
     };
 
-    const navLinks = [
-        { label: t("Navbar.home"), section: "home" },
-        { label: t("Navbar.about"), section: "about" },
-        { label: t("Navbar.skills"), section: "skills" },
-        { label: t("Navbar.projects"), section: "projects" },
-        { label: t("Navbar.education"), section: "education" },
-        { label: t("Navbar.contact"), section: "contact" },
-    ];
+    const navLinks = navItemsData.map(item => ({
+        label: t(`Navbar.${item.translationKey}` as any),
+        section: item.href.substring(1)
+    }));
 
     return (
         <footer className="py-6 sm:py-8 border-t border-border/50">
@@ -47,28 +45,21 @@ const Footer = () => {
 
                     {/* Social Links */}
                     <div className="flex items-center gap-4">
-                        <a
-                            href="https://github.com/medwf"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-muted-foreground hover:text-primary transition-colors"
-                        >
-                            <Github className="h-5 w-5" />
-                        </a>
-                        <a
-                            href="https://www.linkedin.com/in/medwf/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-muted-foreground hover:text-primary transition-colors"
-                        >
-                            <Linkedin className="h-5 w-5" />
-                        </a>
-                        <a
-                            href="mailto:medwf.dev@outlook.com"
-                            className="text-muted-foreground hover:text-primary transition-colors"
-                        >
-                            <Mail className="h-5 w-5" />
-                        </a>
+                        {socialLinks.map((link) => {
+                            const Icon = link.icon;
+                            return (
+                                <a
+                                    key={link.label}
+                                    href={link.href}
+                                    target={link.href.startsWith('http') ? "_blank" : undefined}
+                                    rel={link.href.startsWith('http') ? "noopener noreferrer" : undefined}
+                                    className="text-muted-foreground hover:text-primary transition-colors"
+                                    aria-label={link.label}
+                                >
+                                    <Icon className="h-5 w-5" />
+                                </a>
+                            );
+                        })}
                     </div>
                 </div>
 

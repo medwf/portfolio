@@ -1,163 +1,14 @@
 'use client';
 import { motion } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
-import {
-    Github, Rocket, ExternalLink
-    , Shield, Newspaper, Droplets,
-    Boxes, Car, QrCode
-} from "lucide-react";
+import { Github, Rocket, ExternalLink } from "lucide-react";
+import { featuredProjects, otherProjects } from "@/src/data/projects";
 
 export default function Projects() {
     const selectlanguage = useLocale();
     const t = useTranslations("Projects");
 
-    const featuredProjects = [
-        {
-            title: "WorkhubConnect",
-            description: selectlanguage === "en" ?
-                "A comprehensive platform to manage remote work, featuring task management, time tracking, team collaboration, and performance analytics." :
-                "Une plateforme complète pour gérer le travail à distance, avec gestion des tâches, suivi du temps, collaboration d'équipe et analyse des performances.",
-            icon: Shield,
-            tags: ["Python", "TypeScript", "ReactJS", "Node.js",
-                "FastAPI", "PostgreSQL", "Docker", "Kubernetes"],
-            github: "https://github.com/medwf",
-            badge: true,
-            badgeText: selectlanguage === "en" ? "Incremental" : "Incrémentiel",
-        },
-        {
-            title: selectlanguage === "en" ? "Minutes Management" : "Gestion des Procès-Verbaux",
-            description: selectlanguage === "en" ?
-                "A simple and efficient system to manage, organize, and consult meeting minutes, \
-                    facilitating tracking, archiving, and quick access to official documents." :
-                "Un système simple et efficace pour gérer, \
-                    organiser et consulter les procès-verbaux, facilitant le suivi, \
-                    l’archivage et l’accès rapide aux documents officiels.",
-            icon: Newspaper,
-            tags: [
-                "AngularJS", ".Net", "SQL Server", "REST API",
-                "Docker", "Docker Compose", "Ansible"
-            ],
-            github: "https://github.com/youssefmaimouni"
-        },
-        {
-            title: "BioMorocco",
-            description: selectlanguage === "en" ?
-                "An e-commerce platform focused on organic and sustainable products, \
-                    connecting consumers with local farmers and producers ." :
-                "e-commerce platform focused on organic and sustainable products,\
-                    connecting consumers with local farmers and producers.",
-            icon: Droplets,
-            tags: [
-                "Python", "TypeScript",
-                "Flask", "REST API",
-                "NextJS"
-            ],
-            badge: true,
-            badgeText: selectlanguage === "en" ? "Incremental" : "Incrémentiel",
-            github: "https://github.com/medwf"
-        },
-        {
-            title: "Iktron",
-            description: selectlanguage === "en" ?
-                "A web application for managing industrial equipment maintenance, \
-                    including scheduling, tracking, and reporting features." :
-                "Une application web de gestion de la maintenance des équipements industriels,\
-                    incluant des fonctionnalités de planification, de suivi et de reporting.",
-            icon: Shield,
-            tags: ["Python", "Flask", "ReactJS", "Docker", "Ansible"],
-            github: "https://iktron.ma"
-        },
-        {
-            title: "Persobike",
-            description: selectlanguage === "en" ?
-                "A web application that provides personalized bike recommendations, \
-                    maintenance tips, and cycling routes based on user preferences and location." :
-                "Une application web qui fournit des recommandations de vélos personnalisées,\
-                    des conseils d'entretien et des itinéraires cyclables en fonction des préférences et de la localisation de l'utilisateur.",
-            icon: Shield,
-            tags: ["Python", "Flask", "ReactJS", "Docker", "Ansible"],
-            github: "https://persobike.fr",
-            badge: true,
-            badgeText: selectlanguage === "en" ? "Incremental" : "Incrémentiel",
-        },
-        {
-            title: "Deliciouse Recipes",
-            description: selectlanguage === "en" ?
-                "A web application that allows users to discover, share, and manage delicious recipes from around the world, with admin dashboard management." :
-                "Une application web qui permet aux utilisateurs de découvrir, partager et gérer de délicieuses recettes du monde entier, avec une gestion du tableau de bord administrateur.",
-            icon: Shield,
-            tags: [
-                "TypeScript", "Flask", "Docker", "Ansible",
-                "ReactJS", "tailwindcss", "CSS", "REST API",
-            ],
-            github: "https://www.deliciousrecipes.us"
-        },
-        {
-            title: "Portfolio Website",
-            description: selectlanguage === "en" ?
-                "A personal portfolio website to showcase projects, skills, and experience, built with modern web technologies." :
-                "Un site web de portfolio personnel pour présenter des projets, des compétences et de l'expérience, construit avec des technologies web modernes.",
-            icon: Rocket,
-            tags: ["TypeScript", "ReactJS", "NextJS", "next-intl", "Tailwind CSS", "Eslint", "Framer Motion"],
-            github: "https://github.com/medwf/portfolio",
-        }
-    ];
-
-    const otherProjects = [
-        {
-            title: "Printf",
-            icon: Car,
-            tags: ["C", "C Advanced", "Linux"],
-            github: "https://github.com/medwf/printf"
-        },
-        {
-            title: "Simple shell",
-            icon: Boxes,
-            tags: ["C", "C Advanced", "Linux"],
-            github: "https://github.com/medwf/simple_shell"
-        },
-        {
-            title: "Monty",
-            icon: QrCode,
-            tags: [
-                "C", "FIFO/LIFO", "Stacks, Queues"
-            ],
-            github: "https://github.com/medwf/monty"
-        },
-        {
-            title: "Sorting Algorithms",
-            icon: QrCode,
-            tags: [
-                "C programming", "Algorithms", "Data Structures"
-            ],
-            github: "https://github.com/medwf/sorting_algorithms"
-        },
-        {
-            title: "Binary Trees",
-            icon: QrCode,
-            tags: [
-                "C programming", "Algorithms", "Data Structures"
-            ],
-            github: "https://github.com/medwf/binary_trees"
-        },
-        {
-            title: "File Manager",
-            icon: QrCode,
-            tags: [
-                "NodeJS", "ExpressJS", "MongoDB", "REST API",
-                "Redis"
-            ],
-            github: "https://github.com/medwf/alx-files_manager"
-        },
-        {
-            title: "GestionBiblioth-que",
-            icon: QrCode,
-            tags: [
-                "C programming", "Algorithms", "Data Structures"
-            ],
-            github: "https://github.com/medwf/GestionBiblioth-que"
-        }
-    ];
+    const projects = featuredProjects[selectlanguage as keyof typeof featuredProjects] || featuredProjects.en;
 
     return (
         <section id="projects" className="py-16 sm:py-24 relative overflow-hidden" >
@@ -178,7 +29,7 @@ export default function Projects() {
 
                 <div
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-7xl mx-auto mb-10 sm:mb-16">
-                    {featuredProjects.map((project, index) => (
+                    {projects.map((project, index) => (
                         <motion.div key={project.title} initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -186,9 +37,10 @@ export default function Projects() {
                             whileHover={{ y: -8 }}
                             className="group relative"
                         >
-                            {project.badge &&
-                                <div className="absolute -top-3 -right-3 flex items-center gap-1 px-3 py-1 rounded-full bg-linear-to-r from-amber-500 to-yellow-500 text-background text-xs font-semibold z-10">
-                                    <Rocket className="h-3 w-3" /> {project.badgeText}
+                            {('badge' in project && project.badge) &&
+                                <div className="absolute -top-3 -right-3 flex items-center gap-1 px-3 py-1 rounded-full bg-linear-to-r from-amber-500 to-yellow-500 text-background text-[14px] font-bold z-10">
+                                    {'badgeText' in project && project.badgeText}
+                                    <Rocket className="h-4 w-4" />
                                 </div>}
                             <div className="h-full glass rounded-2xl p-6 border border-border/50 hover:border-primary/30 transition-all">
                                 <div className="w-full h-40 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-5">

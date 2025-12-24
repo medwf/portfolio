@@ -2,22 +2,20 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import profilePicture from "@/public/medwf.png";
-import {
-    MapPin, Phone, Mail, GraduationCap,
-    Calendar, Briefcase, Award, Users
-} from "lucide-react";
+import { MapPin, Phone, Mail, GraduationCap } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { statsData } from "@/src/data/about";
+import { contactInfo } from "@/src/data/contact";
 
 export default function About() {
     const t = useTranslations("about");
     const th = useTranslations("HomePage");
 
-    const stats = [
-        { label: t("yearsLearning"), value: "3+", icon: Calendar },
-        { label: t("projectsCompleted"), value: "5+", icon: Briefcase },
-        { label: t("hackathonsWon"), value: "3", icon: Award },
-        { label: t("techCommunities"), value: "2", icon: Users },
-    ];
+    const stats = statsData.map(stat => ({
+        label: t(stat.translationKey as any),
+        value: stat.value,
+        icon: stat.icon
+    }));
 
     return (
         <section id="about" className="py-16 sm:py-24" >
@@ -56,13 +54,13 @@ export default function About() {
                                     <div className="flex items-center justify-center gap-3 text-sm">
                                         <Phone className="h-4 w-4 text-primary shrink-0" />
                                         <span className="text-muted-foreground">
-                                            +212 663 350 206
+                                            {contactInfo.phone}
                                         </span>
                                     </div>
                                     <div className="flex items-center justify-center gap-3 text-sm">
                                         <Mail className="h-4 w-4 text-primary shrink-0" />
                                         <span className="text-muted-foreground text-xs sm:text-sm truncate">
-                                            medwf.dev@outlook.com
+                                            {contactInfo.email}
                                         </span>
                                     </div>
                                     <div className="flex items-center justify-center gap-3 text-sm">

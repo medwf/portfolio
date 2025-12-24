@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { navItems as navItemsData } from "@/src/data/navigation";
 
 
 const Header = () => {
@@ -12,14 +13,10 @@ const Header = () => {
   const [activeSection, setActiveSection] = useState("home");
   const t = useTranslations("Navbar");
 
-  const navItems: { label: string; href: string }[] = [
-    { label: t("home"), href: "#home" },
-    { label: t("about"), href: "#about" },
-    { label: t("skills"), href: "#skills" },
-    { label: t("projects"), href: "#projects" },
-    { label: t("education"), href: "#education" },
-    { label: t("contact"), href: "#contact" },
-  ];
+  const navItems = navItemsData.map(item => ({
+    label: t(item.translationKey as any),
+    href: item.href
+  }));
 
   useEffect(() => {
     const handleScroll = () => {
