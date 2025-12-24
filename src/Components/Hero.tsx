@@ -64,7 +64,8 @@ export default function Hero() {
                                 <Image src={profilePicture}
                                     alt="Mohamed WAFI"
                                     className="w-full h-full object-cover object-top"
-                                    priority />
+                                    priority
+                                    fetchPriority="high" />
                             </div>
                             {/* <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass text-[12px] sm:text-xs text-muted-foreground whitespace-nowrap">
                                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
