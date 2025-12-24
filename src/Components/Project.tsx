@@ -60,10 +60,10 @@ export default function Projects() {
                                         </span>
                                     ))}
                                 </div>
-                                <a href={project.github} target="_blank" rel="noopener noreferrer"
+                                <a href={'github' in project ? project.github : project.website} target="_blank" rel="noopener noreferrer"
                                     className="flex items-center justify-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors">
-                                    <Github className="h-4 w-4" />
-                                    {t("viewCode")}
+                                    {'github' in project ? <Github className="h-4 w-4" /> : <ExternalLink className="h-4 w-4" />}
+                                    {'github' in project ? t("viewCode") : t("domain")}
                                 </a>
                             </div>
                         </motion.div>

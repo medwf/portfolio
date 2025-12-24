@@ -46,7 +46,7 @@
   "skills": {
     "title": "Compétences &",
     "techStack": "Technologies",
-    "subtitle": "Une boîte à outils complète pour construire des systèmes intelligents du prototype à la production",
+    "subtitle": "Technologies et outils avec lesquels je travaille",
     "lgp": "Langages de Programmation",
     "fe": "Développement Frontend",
     "be": "Développement Backend",
@@ -57,7 +57,7 @@
   "Projects": {
     "title": "Projets",
     "featured": "Phares",
-    "subtitle": "Sous",
+    "subtitle": "Une sélection de mes travaux récents mettant en valeur mes compétences et mon expérience en développement full-stack et DevOps.",
     "other": "Autres Projets",
     "viewCode": "Voir le Code",
     "domain": "Site Web",
@@ -67,7 +67,7 @@
   "Experience": {
     "title": "Expérience &",
     "education": "Formation",
-    "subtitle": "Un parcours à travers l'apprentissage, la création et le leadership de solutions IA impactantes",
+    "subtitle": "Expérience professionnelle, certifications et formation académique.",
     "work": "Expérience Professionnelle",
     "edu": "Formation",
     "awards": "Prix & Distinctions",

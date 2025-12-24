@@ -93,7 +93,7 @@ export const featuredProjects = {
         "A simple and efficient system to manage, organize, and consult meeting minutes, facilitating tracking, archiving, and quick access to official documents.",
       icon: Newspaper,
       tags: minutesManagementTags,
-      github: "https://github.com/youssefmaimouni",
+      github: "https://github.com/medwf",
     },
     {
       title: "BioMorocco",
@@ -111,7 +111,7 @@ export const featuredProjects = {
         "A web application for managing industrial equipment maintenance, including scheduling, tracking, and reporting features.",
       icon: Shield,
       tags: iktronTags,
-      github: "https://iktron.ma",
+      website: "https://iktron.ma",
     },
     {
       title: "Persobike",
@@ -119,7 +119,7 @@ export const featuredProjects = {
         "A web application that provides personalized bike recommendations, maintenance tips, and cycling routes based on user preferences and location.",
       icon: Shield,
       tags: persobikeTags,
-      github: "https://persobike.fr",
+      website: "https://persobike-ali.vercel.app",
       badge: true,
       badgeText: "In Progress",
     },
@@ -129,7 +129,7 @@ export const featuredProjects = {
         "A web application that allows users to discover, share, and manage delicious recipes from around the world, with admin dashboard management.",
       icon: Shield,
       tags: deliciousRecipesTags,
-      github: "https://www.deliciousrecipes.us",
+      website: "https://www.deliciousrecipes.us",
     },
     {
       title: "Portfolio Website",
@@ -157,7 +157,7 @@ export const featuredProjects = {
         "Un système simple et efficace pour gérer, organiser et consulter les procès-verbaux, facilitant le suivi, l'archivage et l'accès rapide aux documents officiels.",
       icon: Newspaper,
       tags: minutesManagementTags,
-      github: "https://github.com/youssefmaimouni",
+      github: "https://github.com/medwf",
     },
     {
       title: "BioMorocco",
@@ -175,7 +175,7 @@ export const featuredProjects = {
         "Une application web de gestion de la maintenance des équipements industriels, incluant des fonctionnalités de planification, de suivi et de reporting.",
       icon: Shield,
       tags: iktronTags,
-      github: "https://iktron.ma",
+      website: "https://iktron.ma",
     },
     {
       title: "Persobike",
@@ -183,7 +183,7 @@ export const featuredProjects = {
         "Une application web qui fournit des recommandations de vélos personnalisées, des conseils d'entretien et des itinéraires cyclables en fonction des préférences et de la localisation de l'utilisateur.",
       icon: Shield,
       tags: persobikeTags,
-      github: "https://persobike.fr",
+      website: "https://persobike-ali.vercel.app",
       badge: true,
       badgeText: "En cours",
     },
@@ -193,7 +193,7 @@ export const featuredProjects = {
         "Une application web qui permet aux utilisateurs de découvrir, partager et gérer de délicieuses recettes du monde entier, avec une gestion du tableau de bord administrateur.",
       icon: Shield,
       tags: deliciousRecipesTags,
-      github: "https://www.deliciousrecipes.us",
+      website: "https://www.deliciousrecipes.us",
     },
     {
       title: "Portfolio Website",

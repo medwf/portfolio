@@ -46,7 +46,7 @@
   "skills": {
     "title": "Skills &",
     "techStack": "Tech Stack",
-    "subtitle": "A comprehensive toolkit for building intelligent systems from prototype to production",
+    "subtitle": "Technologies and tools I work with",
     "lgp": "Languages Programming",
     "fe": "Frontend Development",
     "be": "Backend Development",
@@ -57,7 +57,7 @@
   "Projects": {
     "title": "Featured",
     "featured": "Projects",
-    "subtitle": "Sub",
+    "subtitle": "A selection of my recent work showcasing my skills and experience in full-stack development and DevOps.",
     "other": "Other Projects",
     "viewCode": "View Code",
     "domain": "Website",
