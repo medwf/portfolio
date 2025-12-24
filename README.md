@@ -29,10 +29,12 @@ A modern, responsive, and multilingual portfolio website built with Next.js 15, 
 ```
 portfolio/
 ├── app/
-│   └── [locale]/           # Internationalized routes
-│       ├── layout.tsx      # Root layout with i18n
-│       ├── page.tsx        # Home page
-│       └── globals.css     # Global styles
+│   ├── [locale]/           # Internationalized routes
+│   │   ├── layout.tsx      # Root layout with i18n
+│   │   ├── page.tsx        # Home page
+│   │   └── globals.css     # Global styles
+│   ├── icon.svg            # Favicon
+│   └── robots.ts           # SEO robots file
 ├── src/
 │   ├── Components/         # React components
 │   │   ├── Header.tsx      # Navigation header
@@ -43,7 +45,15 @@ portfolio/
 │   │   ├── Educations.tsx  # Education & experience
 │   │   ├── Contact.tsx     # Contact form
 │   │   └── Footer.tsx      # Footer component
-│   └── data/               # Static data files
+│   └── data/               # Centralized data files
+│       ├── hero.ts         # Hero section data
+│       ├── about.ts        # About section data
+│       ├── skills.ts       # Skills data
+│       ├── projects.ts     # Projects data
+│       ├── education.ts    # Education & experience data
+│       ├── contact.ts      # Contact information
+│       ├── navigation.ts   # Navigation menu data
+│       └── index.ts        # Data exports
 ├── messages/               # i18n translation files
 │   ├── en.json            # English translations
 │   └── fr.json            # French translations
@@ -51,7 +61,8 @@ portfolio/
 │   ├── routing.ts         # Locale routing config
 │   └── request.ts         # Request configuration
 ├── public/                # Static assets
-│   └── Icons/             # Icon assets
+│   ├── Icons/             # Icon assets
+│   └── medwf.png          # Profile picture
 └── package.json
 ```
 
@@ -121,12 +132,14 @@ The portfolio supports multiple languages. To add a new language:
 
 ### Personal Information
 
-Update your personal information in the component files:
+All data is centralized in the `src/data/` folder for easy management:
 
-- Contact details: [src/Components/About.tsx](src/Components/About.tsx)
-- Skills: [src/Components/Skills.tsx](src/Components/Skills.tsx)
-- Projects: [src/Components/Project.tsx](src/Components/Project.tsx)
-- Education: [src/Components/Educations.tsx](src/Components/Educations.tsx)
+- Contact details: [src/data/contact.ts](src/data/contact.ts)
+- Social links: [src/data/hero.ts](src/data/hero.ts)
+- Skills: [src/data/skills.ts](src/data/skills.ts)
+- Projects: [src/data/projects.ts](src/data/projects.ts)
+- Education & Experience: [src/data/education.ts](src/data/education.ts)
+- Navigation: [src/data/navigation.ts](src/data/navigation.ts)
 
 ### Styling
 
@@ -136,10 +149,14 @@ Update your personal information in the component files:
 
 ### WhatsApp Integration
 
-Update the WhatsApp number in [src/Components/Contact.tsx](src/Components/Contact.tsx):
+Update the WhatsApp number in [src/data/contact.ts](src/data/contact.ts):
 
 ```typescript
-const whatsappNumber = "212663350206"; // Your number (country code + number)
+export const contactInfo = {
+  phone: "+212 6 63 35 02 06",
+  whatsappNumber: "212663350206", // Your number (country code + number)
+  email: "medwf.dev@outlook.com",
+} as const;
 ```
 
 ## 📦 Deployment
